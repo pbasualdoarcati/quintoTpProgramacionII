@@ -1,8 +1,8 @@
 package ejercicio2;
 
 public class Bateria {
-    private final String modelo;
-    private final int capacidadmAh;
+    private  String modelo;
+    private  int capacidadmAh;
 
     public Bateria(String modelo, int capacidadmAh) {
         this.modelo = modelo;
@@ -11,7 +11,16 @@ public class Bateria {
     public String getModelo() {
         return modelo;
     }
-    public int getCapacidadmAh() {
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    public int getCapacidad() {
         return capacidadmAh;
+    }
+
+    public void setCapacidad(int capacidad) {
+        this.capacidadmAh = capacidad;
     }
 }

@@ -1,20 +1,46 @@
 package ejercicio6;
 
 public class Reserva {
-    private final String fecha;
-    private final String hora;  
-    private final Cliente cliente; 
-    private Mesa mesa;             
+    private String fecha;
+    private String hora;
+    private Cliente cliente;
+    private Mesa mesa;
 
-    public Reserva(String fecha, String hora, Cliente cliente, Mesa mesa) {
+    public Reserva(String fecha, String hora, Mesa mesa) {
         this.fecha = fecha;
         this.hora = hora;
-        this.cliente = cliente;
         this.mesa = mesa;
     }
-    public String getFecha() { return fecha; }
-    public String getHora() { return hora; }
-    public Cliente getCliente() { return cliente; }
-    public Mesa getMesa() { return mesa; }
-    void setMesa(Mesa m) { this.mesa = m; }
+
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
+
+    public String getHora() {
+        return hora;
+    }
+
+    public void setHora(String hora) {
+        this.hora = hora;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public Mesa getMesa() {
+        return mesa;
+    }
+
+    public void setMesa(Mesa mesa) {
+        this.mesa = mesa;
+    }
 }

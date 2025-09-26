@@ -1,13 +1,12 @@
 package ejercicio1;
-import java.time.LocalDate;
 
 public class Pasaporte {
-    private final String numero;
-    private final LocalDate fechaEmision;
-    private final Foto foto;
+    private  String numero;
+    private  String fechaEmision;
+    private Foto foto;
     private Titular titular;
 
-    public Pasaporte(String numero, LocalDate fechaEmision, Foto foto, Titular titular) {
+    public Pasaporte(String numero, String fechaEmision, Foto foto, Titular titular) {
         this.numero = numero;
         this.fechaEmision = fechaEmision;
         this.foto = foto;            
@@ -15,17 +14,35 @@ public class Pasaporte {
         if (titular != null) titular.setPasaporte(this);
     }
 
-    public String getNumero() {
+   public String getNumero() {
         return numero;
     }
-    public LocalDate getFechaEmision() {
+
+    public void setNumero(String numero) {
+        this.numero = numero;
+    }
+
+    public String getFechaEmision() {
         return fechaEmision;
     }
+
+    public void setFechaEmision(String fechaEmision) {
+        this.fechaEmision = fechaEmision;
+    }
+
     public Foto getFoto() {
         return foto;
     }
+
     public Titular getTitular() {
         return titular;
+    }
+
+    public void setTitular(Titular titular) {
+        this.titular = titular;
+        if (titular != null && titular.getPasaporte() != this) {
+            titular.setPasaporte(this);
+        }
     }
     
 }

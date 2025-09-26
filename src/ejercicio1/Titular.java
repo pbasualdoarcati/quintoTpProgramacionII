@@ -1,25 +1,39 @@
 package ejercicio1;
 
 public class Titular {
-    private final String nombre;
-    private final String dni;
+    private String nombre;
+    private String dni;
     private Pasaporte pasaporte;
 
     public Titular(String nombre, String dni) {
         this.nombre = nombre;
         this.dni = dni;
     }
-    void setPasaporte(Pasaporte p) { this.pasaporte = p; }
-   
-
-    public String getNombre() {
+   public String getNombre() {
         return nombre;
     }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
     public String getDni() {
         return dni;
     }
+
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
     public Pasaporte getPasaporte() {
         return pasaporte;
+    }
+
+    public void setPasaporte(Pasaporte pasaporte) {
+        this.pasaporte = pasaporte;
+        if (pasaporte != null && pasaporte.getTitular() != this) {
+            pasaporte.setTitular(this);
+        }
     }
 
 }

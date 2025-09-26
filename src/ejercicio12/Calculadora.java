@@ -2,7 +2,7 @@ package ejercicio12;
 
 public class Calculadora {
     public void calcular(Impuesto impuesto) {
-        double total = impuesto.getMonto(); 
-        System.out.println("Calculando impuesto: " + total);
+        System.out.println("Cálculo de impuesto de: " + impuesto.getContribuyente().getNombre());
+        System.out.println("Monto: $" + impuesto.getMonto());
     }
 }

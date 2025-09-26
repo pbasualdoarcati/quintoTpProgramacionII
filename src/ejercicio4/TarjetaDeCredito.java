@@ -1,21 +1,49 @@
 package ejercicio4;
 
 public class TarjetaDeCredito {
-    private final String numero;
-    private final String fechaVencimiento;
+    private String numero;
+    private String fechaVencimiento;
     private Cliente cliente;
-    private Banco banco;    
+    private Banco banco;
 
-    public TarjetaDeCredito(String numero, String fechaVencimiento, Cliente cliente, Banco banco) {
+    public TarjetaDeCredito(String numero, String fechaVencimiento, Banco banco) {
         this.numero = numero;
         this.fechaVencimiento = fechaVencimiento;
-        this.cliente = cliente;
         this.banco = banco;
-        if (cliente != null) cliente.setTarjeta(this);
     }
 
-    public String getNumero() { return numero; }
-    public String getFechaVencimiento() { return fechaVencimiento; }
-    public Cliente getCliente() { return cliente; }
-    public Banco getBanco() { return banco; }
+    public String getNumero() {
+        return numero;
+    }
+
+    public void setNumero(String numero) {
+        this.numero = numero;
+    }
+
+    public String getFechaVencimiento() {
+        return fechaVencimiento;
+    }
+
+    public void setFechaVencimiento(String fechaVencimiento) {
+        this.fechaVencimiento = fechaVencimiento;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+        if (cliente != null && cliente.getTarjeta() != this) {
+            cliente.setTarjeta(this);
+        }
+    }
+
+    public Banco getBanco() {
+        return banco;
+    }
+
+    public void setBanco(Banco banco) {
+        this.banco = banco;
+    }
 }

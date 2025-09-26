@@ -1,15 +1,27 @@
 package ejercicio10;
 
-import java.time.LocalDateTime;
-
 public class ClaveSeguridad {
-    private final String codigo;
-    private final LocalDateTime ultimaModificacion;
+    private String codigo;
+    private String ultimaModificacion;
 
-    public ClaveSeguridad(String codigo, LocalDateTime ultimaModificacion) {
+    public ClaveSeguridad(String codigo, String ultimaModificacion) {
         this.codigo = codigo;
         this.ultimaModificacion = ultimaModificacion;
     }
-    public String getCodigo() { return codigo; }
-    public LocalDateTime getUltimaModificacion() { return ultimaModificacion; }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+    public String getUltimaModificacion() {
+        return ultimaModificacion;
+    }
+
+    public void setUltimaModificacion(String ultimaModificacion) {
+        this.ultimaModificacion = ultimaModificacion;
+    }
 }

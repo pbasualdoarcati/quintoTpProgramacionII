@@ -1,9 +1,9 @@
 package ejercicio8;
 
 public class FirmaDigital {
-    private final String codigoHash;
-    private final String fecha;
-    private final Usuario usuario; 
+    private String codigoHash;
+    private String fecha;
+    private Usuario usuario;
 
     public FirmaDigital(String codigoHash, String fecha, Usuario usuario) {
         this.codigoHash = codigoHash;
@@ -11,8 +11,27 @@ public class FirmaDigital {
         this.usuario = usuario;
     }
 
+    public String getCodigoHash() {
+        return codigoHash;
+    }
 
-    public String getCodigoHash() { return codigoHash; }
-    public String getFecha() { return fecha; }
-    public Usuario getUsuario() { return usuario; }
+    public void setCodigoHash(String codigoHash) {
+        this.codigoHash = codigoHash;
+    }
+
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
 }

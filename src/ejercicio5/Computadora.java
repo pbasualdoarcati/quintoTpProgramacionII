@@ -1,23 +1,49 @@
 package ejercicio5;
 
 public class Computadora {
-    private final String marca;
-    private final String numeroSerie;
-    private final PlacaMadre placaMadre; 
-    private Propietario propietario;     
+    private String marca;
+    private String numeroSerie;
+    private PlacaMadre placaMadre;
+    private Propietario propietario;
 
-    public Computadora(String marca, String numeroSerie, PlacaMadre placaMadre, Propietario propietario) {
+    public Computadora(String marca, String numeroSerie, String modelo, String chipset) {
         this.marca = marca;
         this.numeroSerie = numeroSerie;
-        this.placaMadre = placaMadre;
-        this.propietario = propietario;
-        if (propietario != null) propietario.setComputadora(this);
+        this.placaMadre = new PlacaMadre(modelo, chipset);
     }
 
+    public String getMarca() {
+        return marca;
+    }
 
-    public String getMarca() { return marca; }
-    public String getNumeroSerie() { return numeroSerie; }
-    public PlacaMadre getPlacaMadre() { return placaMadre; }
-    public Propietario getPropietario() { return propietario; }
-    void setPropietario(Propietario p) { this.propietario = p; } 
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public String getNumeroSerie() {
+        return numeroSerie;
+    }
+
+    public void setNumeroSerie(String numeroSerie) {
+        this.numeroSerie = numeroSerie;
+    }
+
+    public PlacaMadre getPlacaMadre() {
+        return placaMadre;
+    }
+
+    public void setPlacaMadre(PlacaMadre placaMadre) {
+        this.placaMadre = placaMadre;
+    }
+
+    public Propietario getPropietario() {
+        return propietario;
+    }
+
+    public void setPropietario(Propietario propietario) {
+        this.propietario = propietario;
+        if (propietario != null && propietario.getComputadora() != this) {
+            propietario.setComputadora(this);
+        }
+    }
 }
