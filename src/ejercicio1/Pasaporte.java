@@ -6,18 +6,12 @@ public class Pasaporte {
     private Foto foto;
     private Titular titular;
 
-       public Pasaporte(String numero, String fechaEmision, Titular titular, String imagen, String formato) {
-
+    public Pasaporte(String numero, String fechaEmision, Titular titular, String imagen, String formato) {
         this.numero = numero;
-
         this.fechaEmision = fechaEmision;
-
-        this.foto =  new Foto(imagen, formato);            
-
-        this.titular = titular;     
-
+        this.foto = new Foto(imagen, formato);
+        this.titular = titular;
         if (titular != null) titular.setPasaporte(this);
-
     }
    public String getNumero() {
         return numero;
